@@ -1,0 +1,426 @@
+            @charset "UTF-8";
+            @import "compass";
+            @import "compass/css3";
+            @import "color.scss";
+            $color_white:rgba(255, 255, 255, 0.8);
+            $color_gray:#f5f5f5;
+            $font_color:rgba(0, 0, 0, 0.7);
+            @import url('https://fonts.googleapis.com/css?family=Playball');
+            $font_logo: 'Playball',
+            cursive;
+            $font_default:-apple-system,
+            BlinkMacSystemFont,
+            "Helvetica Neue",
+            "Segoe UI",
+            "Noto Sans Japanese",
+            "ヒラギノ角ゴ ProN W3",
+            Meiryo,
+            sans-serif;
+            @mixin contents-main-style($color) {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 12rem;
+                height: 12rem;
+                margin: 1rem;
+                @include background-image(linear-gradient(left top, $color+rgb(25, 25, 25), $color 50%, $color - rgb(25, 25, 25)));
+                @include border-radius(0.2rem);
+                @include box-shadow( 0rem 1rem 2rem 0rem rgba($color_gray - rgb(100, 100, 100), 0.3),
+                0rem 0.5rem 1rem 0rem rgba($color_gray - rgb(100, 100, 100), 0.2),
+                0.5rem 0rem 1rem 0rem rgba($color_gray - rgb(100, 100, 100), 0.2),
+                -0.5rem 0rem 1rem 0rem rgba($color_gray - rgb(100, 100, 100), 0.2));
+                cursor: pointer;
+                cursor: hand;
+            }
+            
+            @include keyframes(hover_anim) {
+                from {
+                    @include transform(scale(1.0));
+                }
+                to {
+                    @include transform(scale(2));
+                }
+            }
+            
+            button {
+                border-style: none;
+                text-decoration: none;
+            }
+            
+            a {
+                text-decoration: none;
+            }
+            
+            html {
+                width: 100%;
+                height: 100%;
+                overflow-y: scroll;
+                color: $font_color;
+            }
+            
+            body {
+                font-family: $font_default;
+                font-size: 0.8rem;
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            
+            .wrapper {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            
+            header {
+                $color: rgb(255, 255, 255);
+                @include background-image(linear-gradient(left top, $color, $color - rgb(25, 25, 25)));
+                @include box-shadow( 0.1rem 0rem 0.5rem 0rem rgba($color_gray - rgb(100, 100, 100), 1));
+                display: flex;
+                flex-direction: row;
+                width: 100%;
+                height: 6rem;
+                position: fixed;
+                justify-content: space-between;
+            }
+            
+            .area-header-inmain {
+                width: 100%;
+                height: 6rem;
+            }
+            
+            main {
+                width: 100%;
+                height: auto;
+                background-color: $color_gray;
+            }
+            
+            .area-main {
+                width: 100%;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: flex-start;
+            }
+            
+            .area-sidebar {
+                $color: rgb(255, 255, 255);
+                @include background-image(linear-gradient(left top, $color, $color - rgb(25, 25, 25)));
+                @include box-shadow( 0rem 0.1rem 0.5rem 0rem rgba($color_gray - rgb(100, 100, 100), 1));
+                width: 14rem;
+                height: 100vh;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                min-width: 14rem;
+                ul {
+                    width: 100%;
+                }
+            }
+            
+            .area-contents {
+                width: 78%;
+                height: 95%;
+                display: flex;
+                flex-wrap: wrap;
+                align-content: stretch;
+            }
+            
+            .area-header-left {
+                width: 75%;
+                height: 100%;
+            }
+            
+            .box-logo {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100%;
+                width: 12rem;
+                font-family: $font_logo;
+                font-size: 3rem;
+            }
+            
+            .area-header-left-top {
+                width: 100%;
+                height: 60%;
+            }
+            
+            .area-header-left-under {
+                width: 100%;
+                height: 40%;
+            }
+            
+            [class*=list-cmn-navbar] {
+                width: 20%;
+                height: 80%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                &:hover {
+                    @include keyframes(hover_list) {
+                        0% {
+                            color: $font_color;
+                        }
+                        100% {
+                            color: $font_color + rgba(100, 100, 100, 0.7);
+                        }
+                    }
+                    @include keyframes(hover_line_appear) {
+                        0% {
+                            width: 0%;
+                        }
+                        100% {
+                            width: 100%;
+                        }
+                    }
+                    a {
+                        &::after {
+                            content: "";
+                            display: block;
+                            height: 2px;
+                            background-color: rgba(0, 0, 0, 0.5);
+                            @include animation(hover_line_appear 1.5s ease);
+                            animation-fill-mode: forwards;
+                        }
+                        @include animation(hover_list 0.3s ease-in-out);
+                        animation-fill-mode: forwards;
+                    }
+                }
+            }
+            
+            [class*=contents-cmn-navbar] {
+                color: $font_color;
+                display: inline-block;
+                text-align: center;
+                width: 100%;
+                font-size: 1rem;
+                &:after {
+                    content: "";
+                    display: block;
+                    height: 1px;
+                    width: 100%;
+                    background-color: rgba(0, 0, 0, 0);
+                }
+            }
+            
+            .box-cmn-navbar {
+                width: 100%;
+                height: 100%;
+                display: flex;
+                color: $font_color;
+                justify-content: space-between;
+                align-items: center;
+                flex-wrap: nowrap;
+            }
+            
+            .box-sidebar {
+                width: 100%;
+                height: 90%;
+                display: flex;
+                justify-content: center;
+                ul {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: flex-start;
+                    align-items: center;
+                    width: 100%;
+                    li {
+                        width: 100%;
+                        height: 2rem;
+                    }
+                }
+            }
+            
+            .area-header-right {
+                width: 20%;
+                height: 100%;
+            }
+            
+            [class*=card-sidebar] {
+                font-size: 0.7rem;
+                width: 100%;
+                height: 100%;
+                display: flex;
+                flex-direction: row;
+                justify-content: flex-start;
+                align-items: center;
+                cursor: pointer;
+                cursor: hand;
+                &:hover {
+                    @include keyframes(hover_anim) {
+                        from {
+                            color: $font_color;
+                            @include box-shadow(0rem 0rem 0rem 0rem rgba(#000, 0));
+                        }
+                        to {
+                            color: $font_color + rgba(150, 150, 150, 0.7);
+                            @include box-shadow(0rem 0.1rem 0.5rem 0rem rgba(#000, 0.2));
+                        }
+                    }
+                    @include animation(hover_anim 0.5s ease-in-out);
+                    animation-fill-mode: forwards;
+                    [class*=icon-sidebar-rct] {
+                        @include keyframes(icon_disappear) {
+                            from {
+                                opacity: 0;
+                            }
+                            to {
+                                opacity: 1;
+                            }
+                        }
+                        @include animation(icon_disappear 0.3s ease-in-out);
+                        animation-fill-mode: forwards;
+                    }
+                    [class*=icon-sidebar-std] {
+                        @include keyframes(icon_appear) {
+                            from {
+                                opacity: 1;
+                            }
+                            to {
+                                opacity: 0;
+                            }
+                        }
+                        @include animation(icon_appear 0.3s ease-in-out);
+                        animation-fill-mode: forwards;
+                    }
+                }
+            }
+            
+            [class*=box-icon-sidebar] {
+                width: 1.4rem;
+                height: 1.4rem;
+                margin: 2rem;
+                position: relative;
+            }
+            
+            @include keyframes(hover_anim_000) {
+                from {
+                    background-color: rgb(0, 0, 0);
+                    @include box-shadow( 0rem 1rem 2rem 0rem rgba($color_gray - rgb(100, 100, 100), 0.3),
+                    0rem 0.5rem 1rem 0rem rgba($color_gray - rgb(100, 100, 100), 0.2),
+                    0.5rem 0rem 1rem 0rem rgba($color_gray - rgb(100, 100, 100), 0.2),
+                    -0.5rem 0rem 1rem 0rem rgba($color_gray - rgb(100, 100, 100), 0.2));
+                }
+                to {
+                    background-color: rgb(255, 255, 255);
+                    @include box-shadow( 0rem 1rem 2rem 0rem rgba($color_gray - rgb(100, 100, 100), 0.3),
+                    0rem 0.5rem 1rem 0rem rgba($color_gray - rgb(100, 100, 100), 0.2),
+                    0.5rem 0rem 1rem 0rem rgba($color_gray - rgb(100, 100, 100), 0.2),
+                    -0.5rem 0rem 1rem 0rem rgba($color_gray - rgb(100, 100, 100), 0.2));
+                }
+            }
+            
+            .box-contents-main-01 {
+                @include contents-main-style($color_01);
+                &:hover {
+                    @include contents-main-style($color_01 - rgb(70, 70, 70));
+                }
+            }
+            
+            .box-contents-main-02 {
+                @include contents-main-style($color_17);
+                &:hover {
+                    @include contents-main-style($color_17 - rgb(70, 70, 70));
+                }
+            }
+            
+            .box-contents-main-03 {
+                @include contents-main-style($color_02);
+                &:hover {
+                    @include contents-main-style($color_02 - rgb(70, 70, 70));
+                }
+            }
+            
+            .box-contents-main-04 {
+                @include contents-main-style($color_16);
+                &:hover {
+                    @include contents-main-style($color_16 - rgb(70, 70, 70));
+                }
+            }
+            
+            .box-contents-main-05 {
+                @include contents-main-style($color_03);
+                &:hover {
+                    @include contents-main-style($color_03 - rgb(70, 70, 70));
+                }
+            }
+            
+            .box-contents-main-06 {
+                @include contents-main-style($color_15);
+                &:hover {
+                    @include contents-main-style($color_15 - rgb(70, 70, 70));
+                }
+            }
+            
+            .box-contents-main-07 {
+                @include contents-main-style($color_04);
+                &:hover {
+                    @include contents-main-style($color_04 - rgb(70, 70, 70));
+                }
+            }
+            
+            .box-contents-main-08 {
+                @include contents-main-style($color_14);
+                &:hover {
+                    @include contents-main-style($color_14 - rgb(70, 70, 70));
+                }
+            }
+            
+            .box-contents-main-09 {
+                @include contents-main-style($color_05);
+                &:hover {
+                    @include contents-main-style($color_05 - rgb(70, 70, 70));
+                }
+            }
+            
+            .box-contents-main-10 {
+                @include contents-main-style($color_13);
+                &:hover {
+                    @include contents-main-style($color_13 - rgb(70, 70, 70));
+                }
+            }
+            
+            .box-contents-main-11 {
+                @include contents-main-style($color_06);
+                &:hover {
+                    @include contents-main-style($color_06 - rgb(70, 70, 70));
+                }
+            }
+            
+            .box-contents-main-12 {
+                @include contents-main-style($color_12);
+                &:hover {
+                    @include contents-main-style($color_12 - rgb(70, 70, 70));
+                }
+            }
+            
+            [class*=img-contents-main] {
+                width: 60%;
+                height: 60%;
+            }
+            
+            [class*=icon-sidebar-std] {
+                width: 100%;
+                height: 100%;
+                opacity: 1;
+                position: absolute;
+            }
+            
+            [class*=icon-sidebar-rct] {
+                width: 100%;
+                height: 100%;
+                opacity: 0;
+                position: absolute;
+            }
+            
+            [class*=str-sidebar] {
+                display: inline-block;
+            }
+            
+            footer {
+                width: 100%;
+                height: 10rem;
+            }

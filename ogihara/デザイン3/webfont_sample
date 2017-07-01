@@ -1,0 +1,19 @@
+$font_logo: 'Kaushan Script', cursive;
+$font_logo: 'Shrikhand', cursive;
+$font_logo: 'Crushed', cursive;
+$font_logo: 'Playball', cursive;
+$font_logo: 'Covered By Your Grace', cursive;
+$font_logo: 'Love Ya Like A Sister', cursive;
+$font_logo: 'Gochi Hand', cursive;
+$font_logo: 'Monoton', cursive;
+$font_logo: 'Fredericka the Great', cursive;
+$font_logo: 'Kranky', cursive;
+$font_logo: 'Barrio', cursive;
+$font_logo: 'Titan One', cursive;
+
+$font-normal: 'Nunito', sans-serif;
+$font-normal: 'Dosis', sans-serif;
+$font-normal: 'Fredoka One', cursive;
+$font-normal: 'Overlock', cursive;
+$font-normal: 'Laila', serif;
+$font-normal: 'Quicksand', sans-serif;

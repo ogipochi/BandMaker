@@ -1,0 +1,258 @@
+@import url("https://fonts.googleapis.com/css?family=Barrio|Covered+By+Your+Grace|Crushed|Fredericka+the+Great|Gochi+Hand|Kaushan+Script|Kranky|Love+Ya+Like+A+Sister|Monoton|Playball|Shrikhand|Titan+One");
+@import url('https://fonts.googleapis.com/css?family=Dosis:800|Fredoka+One|Laila:700|Nunito:700|Overlock:900|Quicksand:700"');
+@import url("https://fonts.googleapis.com/earlyaccess/notosansjapanese.css");
+@keyframes a_hover_animation {
+  0% {
+    color: rgba(0, 0, 0, 0.8); }
+  100% {
+    color: rgba(0, 0, 0, 0.1); } }
+[class*=card-navbar-] [class*=str-navbar]:hover {
+  animation-name: a_hover_animation;
+  animation-duration: 1.3s;
+  animation-timing-function: ease-in-out;
+  animation-delay: 0s;
+  animation-iteration-count: 1;
+  animation-direction: alternate;
+  animation-fill-mode: forwards; }
+
+html {
+  width: 100%;
+  height: 100%;
+  overflow-y: scroll;
+  font-family: "Quicksand", sans-serif, "Noto Sans Japanese"; }
+
+ul {
+  list-style: none; }
+
+a {
+  font-family: "Quicksand", sans-serif, "Noto Sans Japanese";
+  text-decoration: none;
+  color: rgba(0, 0, 0, 0.8); }
+
+a:hover {
+  animation-name: a_hover_animation;
+  animation-duration: 2s;
+  animation-timing-function: ease-in-out;
+  animation-delay: 0s;
+  animation-iteration-count: infinite; }
+
+h1, h2, h3, h4, h5 {
+  margin: 0;
+  padding: 0; }
+
+.form-keyword, [class*=btn-comment-] {
+  border-radius: 0.2rem; }
+
+[class*=btn-comment-] {
+  background-color: #a69b97;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  color: white;
+  font-size: 1.1rem; }
+
+ul {
+  margin: 0;
+  padding: 0; }
+
+input, button, textarea, select {
+  margin: 0;
+  padding: 0;
+  background: none;
+  border: none;
+  border-radius: 0;
+  outline: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none; }
+
+p {
+  margin: 0;
+  padding: 0; }
+
+body {
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  color: rgba(0, 0, 0, 0.8); }
+
+.wrapper {
+  width: 100%;
+  height: 100%;
+  background-color: white; }
+
+header {
+  width: 100%;
+  height: 5rem;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  align-items: flex-end;
+  position: fixed;
+  color: black;
+  background-color: rgba(255, 255, 255, 0.9); }
+
+.area-search {
+  order: 1;
+  width: 40%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+.mod-search {
+  order: 1;
+  width: 40%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+.area-logo {
+  order: 2;
+  width: 20%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end; }
+
+.area-navbar {
+  order: 3;
+  width: 40%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+.mod-navbar {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  width: 100%;
+  height: 50%; }
+
+.area-space-nav {
+  width: 100%;
+  height: 5rem; }
+
+main {
+  width: 100%; }
+
+.area-cmn-main {
+  width: 100%; }
+
+.area-img-top {
+  width: 100%;
+  height: 35rem;
+  background-image: url("../image/background_sample.png");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover; }
+
+.area-contents-01 {
+  width: 100%; }
+
+[class*=card-0] {
+  width: 100%;
+  height: 25rem;
+  display: flex;
+  justify-content: center; }
+  [class*=card-0] [class*=area-img] {
+    display: inline-block;
+    width: 60%;
+    height: 100%; }
+  [class*=card-0] [class*=area-comment] {
+    display: inline-block;
+    width: 40%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+
+[class*=box-comment-] {
+  width: 70%;
+  height: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; }
+
+[class*=icon-header] {
+  width: 2.5rem;
+  height: auto; }
+
+[class*=card-navbar-] {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 19%;
+  height: 100%; }
+  [class*=card-navbar-] [class*=str-navbar] {
+    color: rgba(0, 0, 0, 0.8); }
+
+.form-keyword {
+  width: 100%;
+  height: 2rem;
+  max-width: 20rem;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 0 0.05rem 0.05rem rgba(0, 0, 0, 0.3); }
+
+#search-text {
+  height: 100%;
+  width: 80%; }
+
+#btn-submit {
+  height: 100%;
+  width: 3.5rem;
+  background-color: #a69b97;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.9);
+  font-family: "Quicksand", sans-serif, "Noto Sans Japanese";
+  font-size: 1.3rem; }
+
+.ico-logo {
+  margin: 0;
+  font-family: "Playball", cursive;
+  font-size: 3.5rem;
+  text-align: center; }
+
+.str-img-top {
+  font-size: 2.5rem;
+  color: rgba(255, 255, 255, 0.95);
+  margin: 0;
+  padding: 0; }
+
+[class*=area-img] {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover; }
+
+.area-img-01 {
+  background-image: url("../image/community.png"); }
+
+.area-img-02 {
+  background-image: url("../image/door.png"); }
+
+.area-img-03 {
+  background-image: url("../image/myroom.png"); }
+
+.area-img-04 {
+  background-image: url("../image/phone.png"); }
+
+.area-img-05 {
+  background-image: url("../image/friends.png"); }
+
+[class*=area-comment] {
+  background-color: #fffffb; }
+
+[class*=btn-comment-] {
+  width: 60%;
+  height: 3rem; }
+
+/*# sourceMappingURL=base.css.map */
