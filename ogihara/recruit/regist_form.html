@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<!-- saved from url=(0042)http://127.0.0.1:8000/recruit/regist_form/ -->
+<html lng="ja"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Unplugged</title>
+    
+    <meta name="keywords" content="">
+    <link rel="shortcut icon" href="http://127.0.0.1:8000/recruit/regist_form/f" type="image/x-icon">
+    <script type="text/javascript" src="./regist_form_files/jquery.min.js"></script>
+    <link rel="stylesheet" href="./regist_form_files/reset.css">
+    <link rel="stylesheet" type="text/css" href="./regist_form_files/widget.css">
+    <link rel="stylesheet" type="text/css" href="./regist_form_files/base.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./regist_form_files/style.css">
+    <link rel="stylesheet" href="./regist_form_files/widget(1).css"> 
+
+
+</head>
+
+<body>
+    <header>
+        <div class="area-header-logo">
+            <a href="http://127.0.0.1:8000/recruit/regist_form/" class="box-header-logo">
+                [LOGO]Unplugged
+            </a>
+        </div>
+        <nav class="nav-cmn-main">
+            <ul>
+                <li>
+                    <a href="http://127.0.0.1:8000/recruit/regist_form/">TOP</a>
+                </li>
+                <li>
+                    <a href="http://127.0.0.1:8000/recruit/unit_recruitment_list/">BANDS</a>
+                </li>
+                <li>
+                    <a href="http://127.0.0.1:8000/recruit/regist_form/">BBS</a>
+                </li>
+                <li>
+                    <a href="http://127.0.0.1:8000/recruit/regist_form/">ABOUT</a>
+                </li>
+                <li>
+                    <a href="http://127.0.0.1:8000/recruit/regist_form/">CONTACT</a>
+                </li>
+                <li>
+                    <a href="http://127.0.0.1:8000/recruit/regist_form/">ゲスト
+                        <!-- ログイン時は"〇〇さん" (MyPage)-->
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <ul class="box-auth">
+            <li>
+                
+                <a href="http://127.0.0.1:8000/accounts/logout/" class="btn-cmn-strong">ログアウト</a>
+                
+            </li>
+            <li>
+                <a href="http://127.0.0.1:8000/accounts/regist_form/" class="btn-cmn-consent">会員登録</a>
+            </li>
+        </ul>
+    </header>
+    <main>
+        
+<div class="area-contents-main">
+     
+<form action="http://127.0.0.1:8000/recruit/regist_confirm/" method="POST" class="contents-regist-main box-cmn-z1">
+<input type="hidden" name="csrfmiddlewaretoken" value="Jb3kY4F7tcEx2H7zR5Q3mItMWsn4vNYEYBxC163c1b0tQQTVd7wxnEvKWNEDw4aR">
+    <p>ユニット名:<input type="text" name="unit_name" maxlength="255" required="" id="id_unit_name"></p>
+<div class="area-form-need_inst">
+    <p class="msg-count-need_inst">募集楽器:1</p>
+    <div class="btn-add-neet_inst">追加</div>
+    <div class="box-form-need_inst">
+        <div class="forJS-active-form">
+             Inst need<select name="inst_need1" required="" id="id_inst_need">
+  <option value="" selected="">---------</option>
+
+  <option value="1">アコースティックギター</option>
+
+  <option value="2">エレクトリックベース</option>
+
+</select> 
+        </div>
+    </div>
+</div>
+
+<div class="area-form-interim_member">
+        <p class="msg-count-interim_member">現メンバー数:1</p>
+        <div class="btn-add-interim_member">追加</div>
+        <div class="box-form-interim_member">
+            <div class="forJS-active-form">
+ Member<select name="member1" required="" id="id_member">
+  <option value="" selected="">---------</option>
+
+  <option value="1">ogihara</option>
+
+  <option value="2">ogihara</option>
+
+</select>  Inst used<select name="inst_used1" required="" id="id_inst_used">
+  <option value="" selected="">---------</option>
+
+  <option value="1">アコースティックギター</option>
+
+  <option value="2">エレクトリックベース</option>
+
+</select> 
+            </div>
+        </div>
+</div>
+
+
+<div class="area-form-set_list">
+        <p class="msg-count-set_list">曲数:1</p>
+        <div class="btn-add-set_list">追加</div>
+        <div class="box-form-set_list">
+            <div class="forJS-active-form">
+
+ Songs<input type="text" name="songs1" maxlength="255" required="" id="id_songs">  Artist<input type="text" name="artist1" maxlength="255" required="" id="id_artist"> 
+            </div>
+        </div>
+</div>
+<p><input type="checkbox" name="one_shot" id="id_one_shot" checked="">一回きりの出演</p>
+<p>コメント:<textarea name="comment" cols="40" rows="10" required="" id="id_comment"></textarea></p>
+
+
+
+<input class="input-cmn-btn submit-btn-form" type="submit" value="登録">
+</form>
+<script type="text/javascript">
+    
+    //need_inst追加
+    $('[name="inst_need"]').attr('name','inst_need1');
+    var counter_inst_need = 1;
+    $('.btn-add-neet_inst').on('click', function(){ 
+        counter_inst_need+=1;
+        //追加するフォーム
+        var form_name = "inst_need" + counter_inst_need.toString();
+        var content = $(".box-form-need_inst").children(".forJS-active-form").clone();
+
+        $(".box-form-need_inst").children(".forJS-active-form").removeAttr("class");
+        $(".box-form-need_inst").prepend(content);
+        $(".forJS-active-form").children("[id='id_inst_need']").attr('name',form_name);
+        $(".msg-count-need_inst").html("募集楽器:" + counter_inst_need.toString());
+    });
+
+    //member追加
+    $('[name="member"]').attr('name','member1');
+    $('[name="inst_used"]').attr('name','inst_used1');
+    var counter_interim_member = 1;
+    $('.btn-add-interim_member').on('click', function(){ 
+        counter_interim_member+=1;
+        //追加するフォーム
+        var form_name1 = "id_member" + counter_interim_member.toString();
+        var form_name2 = "id_inst_used" + counter_interim_member.toString();
+        var content = $(".box-form-interim_member").children(".forJS-active-form").clone();
+        $(".box-form-interim_member").children(".forJS-active-form").removeAttr("class");
+        $(".box-form-interim_member").prepend(content);
+        $(".forJS-active-form").children("[id='id_member']").attr('name',form_name1);
+        $(".forJS-active-form").children("[id='id_inst_used']").attr('name',form_name2);
+        
+        $(".msg-count-interim_member").html("現メンバー数:" + counter_interim_member.toString());
+    });
+
+    //need_inst追加
+    $('[name="artist"]').attr('name','artist1');
+    $('[name="songs"]').attr('name','songs1');
+    var counter_set_list = 1;
+    $('.btn-add-set_list').on('click', function(){ 
+        counter_set_list+=1;
+        //追加するフォーム
+        var form_name1 = "id_artist" + counter_set_list.toString();
+        var form_name2 = "id_songs" + counter_set_list.toString();
+        var content = $(".box-form-set_list").children(".forJS-active-form").clone();
+
+        $(".box-form-set_list").children(".forJS-active-form").removeAttr("class");
+        $(".box-form-set_list").prepend(content);
+        $(".forJS-active-form").children("[id='id_artist']").attr('name',form_name1);
+        $(".forJS-active-form").children("[id='id_songs']").attr('name',form_name2);
+        
+        $(".msg-count-set_list").html("曲数:" + counter_set_list.toString());
+        
+    });
+   
+</script>
+
+
+
+</div>
+
+    </main>
+    <footer>
+        <div>
+            <a href="http://127.0.0.1:8000/recruit/regist_form/">Twitter</a>
+            <a href="http://127.0.0.1:8000/recruit/regist_form/">Facebook</a>
+        </div>
+        <span>©2017 Unplugged kimi ogi</span>
+    </footer>
+
+
+</body></html>
